@@ -9,4 +9,8 @@ int _printf(const char *format, ...);
 int _putchar(char c);
 void print_binary(unsigned int num);
 int calculate_number_of_digits(unsigned int num, int base);
+void convert_unsigned_decimal(va_list args);
+void convert_octal(va_list args);
+void _isLower(va_list args);
+void _isUpper(va_list args);
 #endif
