@@ -1,12 +1,7 @@
-<<<<<<< HEAD
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
 #include "main.h"
-
-=======
-#include "main.h"
->>>>>>> 7b032504d70b19a16de6d266b875f940c4fe3494
 /**
  * _integer - function that prints an argument
  * @num: Source of the argument
@@ -14,7 +9,6 @@
  */
 void  _integer(int num)
 {
-<<<<<<< HEAD
         int pnt = 0;
         va_list tally;
 
@@ -33,18 +27,16 @@ void  _integer(int num)
                         putchar(d);
                         pnt++;
                 }
-                else if (*src == 'i')
+                else if (*scr == 'i')
                 {
                         char i = (char)va_arg(tally, int);
 
                         putchar(i);
                         pnt++;
                 }
-                return (0);
         }
         va_end(tally);
-        return (pnt);
-=======
+
 char buffer[20];
 int index = 0;
 int i;
@@ -70,5 +62,5 @@ for (i = index - 1; i < 0; i--)
 {
 _putchar(buffer[i]);
 }
->>>>>>> 7b032504d70b19a16de6d266b875f940c4fe3494
 }
+
