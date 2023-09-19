@@ -1,6 +1,7 @@
 #include "main.h"
 void print_binary(unsigned int num);
 void  _integer(int num);
+int convert_octal(va_list args);
 /**
  * _printf - Function that prints to stdou format
  * @format : Input character
@@ -46,6 +47,10 @@ else if (*format == '%')
 _putchar('%');
 count++;
 }
+else if (*format == 'o')
+            {
+                count += convert_octal(args);
+            }
 else if (*format == 'd' || *format == 'i')
 {
 int num = va_arg(args, int);
