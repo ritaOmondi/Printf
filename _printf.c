@@ -4,6 +4,7 @@ void  _integer(int num);
 int convert_octal(va_list args);
 int handle_unsigned(va_list args);
 int printf_hexadecimal(va_list args, char specifier);
+int custom_string(va_list args);
 /**
  * _printf - Function that prints to stdou format
  * @format : Input character
@@ -57,6 +58,10 @@ else if (*format == 'u')
             {
                 count += handle_unsigned(args);
             }
+else if (*format == 'S')
+{
+count += custom_string(args);
+}
 else if (*format == 'x' || *format == 'X')
 {
 char specifier = (*format == 'x') ? 'a' : 'A';
