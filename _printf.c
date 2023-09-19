@@ -4,6 +4,7 @@ void  _integer(int num);
 int _printf(const char *format, ...);
 int convert_octal(va_list args);
 int printf_hexadecimal(va_list args, char specifier);
+int custom_string(va_list args);
 /**
  * _printf - Function that prints to stdou format
  * @format : Input character
@@ -13,37 +14,30 @@ int printf_hexadecimal(va_list args, char specifier);
  */
 int _printf(const char *format, ...)
 {
+	int num_digits;
 	int count = 0;
 	va_list args;
-	int num_digits;
-
 	va_start(args, format);
-
 	while (*format != '\0')
 	{
 		if (*format == '%')
 		{
 			format++;
-		}
 			if (*format == 'b')
 			{
 				unsigned int num = va_arg(args, unsigned int);
-
 				print_binary(num);
 				count += calculate_number_of_digits(num, 2);
 			}
-
 			else if (*format == 'c')
 			{
 				char c = (char)va_arg(args, int);
-
 				_putchar(c);
 				count++;
 			}
 			else if (*format == 's')
 			{
 				char *str = va_arg(args, char *);
-
 				while (*str != '\0')
 				{
 					_putchar(*str);
@@ -56,7 +50,7 @@ int _printf(const char *format, ...)
 				_putchar('%');
 				count++;
 			}
-			else if (*format == '0')
+			else if (*format == 'o')
 			{
 				count += convert_octal(args);
 			}
@@ -64,16 +58,18 @@ int _printf(const char *format, ...)
 			{
 				count += handle_unsigned(args);
 			}
-			else if (*format == 'x' || *format == 'x')
+			else if (*format == 'S')
+			{
+				count += custom_string(args);
+			}
+			else if (*format == 'x' || *format == 'X')
 			{
 				char specifier = (*format == 'x') ? 'a' : 'A';
-
 				count += printf_hexadecimal(args, specifier);
 			}
 			else if (*format == 'd' || *format == 'i')
 			{
 				int num = va_arg(args, int);
-
 				_integer(num);
 				num_digits = calculate_number_of_digits(num, 10);
 				if (num < 0)
@@ -82,16 +78,16 @@ int _printf(const char *format, ...)
 				}
 				count += num_digits;
 			}
-		else
-		{
-			_putchar('%');
-			_putchar (*format);
-			count += 2;
+			else
+			{
+				_putchar('%');
+				_putchar(*format);
+				count += 2;
+			} 
 		}
-	}
 		else
 		{
-			_putchar (*format);
+			_putchar(*format);
 			count++;
 		}
 		format++;

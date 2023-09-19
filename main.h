@@ -14,4 +14,5 @@ int prints_write(char buffer[], size_t);
 void _integer(int num);
 int handle_unsigned(va_list args);
 int printf_hexadecimal(va_list args, char specifier);
+int custom_string(va_list args);
 #endif
