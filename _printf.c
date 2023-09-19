@@ -51,10 +51,16 @@ int num = va_arg(args, int);
 _integer(num);
 count++;
 }
+else
+{
+_putchar('%');
+_putchar(*format);
+count += 2;
+}
 }
 else
 {
-_putchar (*format);
+_putchar(*format);
 count++;
 }
 format++;
