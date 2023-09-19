@@ -1,5 +1,6 @@
 #include "main.h"
 void print_binary(unsigned int num);
+void  _integer(int num);
 /**
  * _printf - Function that prints to stdou format
  * @format : Input character
@@ -42,6 +43,12 @@ count++;
 else if (*format == '%')
 {
 _putchar('%');
+count++;
+}
+else if (*format == 'd' || *format == 'i')
+{
+int num = va_arg(args, int);
+_integer(num);
 count++;
 }
 }

@@ -1,0 +1,11 @@
+/** _printf man page
+/* The project "September 19 2023"
+/*
+/*
+/*
+
+The printf function sends formatted output to stdout.
+A custom _printf() for learning purposes was developed by cohort  #18 students, Rita and  Alvin
+_printf() function format string is a character string, beginning and ending in its initial shift state, if any. 
+These arguments are placed using the percentage '%' operator
+

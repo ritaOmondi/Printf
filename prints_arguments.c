@@ -1,17 +1,20 @@
+<<<<<<< HEAD
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
 #include "main.h"
 
+=======
+#include "main.h"
+>>>>>>> 7b032504d70b19a16de6d266b875f940c4fe3494
 /**
- * argu_prints - function that prints an argument
- * according to its type
- * @src: Source of the argument
- * @...: Others
- * Return: The pointer to the character
+ * _integer - function that prints an argument
+ * @num: Source of the argument
+ * Return: Nothing
  */
-int argu_prints(const char *src, ...)
+void  _integer(int num)
 {
+<<<<<<< HEAD
         int pnt = 0;
         va_list tally;
 
@@ -41,4 +44,31 @@ int argu_prints(const char *src, ...)
         }
         va_end(tally);
         return (pnt);
+=======
+char buffer[20];
+int index = 0;
+int i;
+
+if (num < 0)
+{
+_putchar('-');
+num = -num;
+}
+if (num == 0)
+{
+buffer[index++] = '0';
+}
+else
+{
+while (num != 0)
+{
+buffer[index++] = '0' + (num % 10);
+num /= 10;
+}
+}
+for (i = index - 1; i < 0; i--)
+{
+_putchar(buffer[i]);
+}
+>>>>>>> 7b032504d70b19a16de6d266b875f940c4fe3494
 }
