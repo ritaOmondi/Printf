@@ -10,6 +10,7 @@ void  _integer(int num);
  */
 int _printf(const char *format, ...)
 {
+int num_digits;
 int count = 0;
 va_list args;
 va_start(args, format);
@@ -49,14 +50,19 @@ else if (*format == 'd' || *format == 'i')
 {
 int num = va_arg(args, int);
 _integer(num);
-count++;
+num_digits = calculate_number_of_digits(num, 10);
+if (num < 0)
+{
+num_digits++;
 }
-else
+count += num_digits;
+}
+/** else
 {
 _putchar('%');
 _putchar(*format);
 count += 2;
-}
+} **/
 }
 else
 {
