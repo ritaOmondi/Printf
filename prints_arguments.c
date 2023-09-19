@@ -23,11 +23,12 @@ else
 {
 while (num != 0)
 {
-buffer[index++] = '0' + (num % 10);
+int digit = num % 10;
+buffer[index++] = '0' + digit;
 num /= 10;
 }
 }
-for (i = index - 1; i < 0; i--)
+for (i = index - 1; i >= 0; i--)
 {
 _putchar(buffer[i]);
 }
