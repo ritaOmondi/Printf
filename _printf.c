@@ -57,12 +57,12 @@ num_digits++;
 }
 count += num_digits;
 }
-/** else
+else
 {
 _putchar('%');
 _putchar(*format);
 count += 2;
-} **/
+} 
 }
 else
 {
