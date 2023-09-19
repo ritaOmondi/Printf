@@ -3,6 +3,7 @@ void print_binary(unsigned int num);
 void  _integer(int num);
 int convert_octal(va_list args);
 int handle_unsigned(va_list args);
+int printf_hexadecimal(va_list args, char specifier);
 /**
  * _printf - Function that prints to stdou format
  * @format : Input character
@@ -56,6 +57,11 @@ else if (*format == 'u')
             {
                 count += handle_unsigned(args);
             }
+else if (*format == 'x' || *format == 'X')
+{
+char specifier = (*format == 'x') ? 'a' : 'A';
+count += printf_hexadecimal(args, specifier);
+}
 else if (*format == 'd' || *format == 'i')
 {
 int num = va_arg(args, int);
