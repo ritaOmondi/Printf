@@ -8,6 +8,7 @@
 int _printf(const char *format, ...);
 int _putchar(char c);
 void print_binary(unsigned int num);
-int argu_prints(const char *src, ...)
 int calculate_number_of_digits(unsigned int num, int base);
+int prints_write(char buffer[], size_t);
+
 #endif
