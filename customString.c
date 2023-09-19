@@ -13,7 +13,7 @@ while (*str)
 {
 if (*str < 32 || *str >= 127)
 {
-_printf("\\x%0A", (unsigned char)*str);
+_printf("\\x%02X", (unsigned char)*str);
 count += 4;
 }
 else
