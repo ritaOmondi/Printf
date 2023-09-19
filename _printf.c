@@ -2,6 +2,7 @@
 void print_binary(unsigned int num);
 void  _integer(int num);
 int convert_octal(va_list args);
+int handle_unsigned(va_list args);
 /**
  * _printf - Function that prints to stdou format
  * @format : Input character
@@ -48,8 +49,12 @@ _putchar('%');
 count++;
 }
 else if (*format == 'o')
+{
+count += convert_octal(args);
+}
+else if (*format == 'u')
             {
-                count += convert_octal(args);
+                count += handle_unsigned(args);
             }
 else if (*format == 'd' || *format == 'i')
 {
